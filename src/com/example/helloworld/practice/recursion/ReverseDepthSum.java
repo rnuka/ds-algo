@@ -1,4 +1,4 @@
-package com.example.helloworld.practice.arrays;
+package com.example.helloworld.practice.recursion;
 
 import java.util.*;
 
