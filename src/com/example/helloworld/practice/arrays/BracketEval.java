@@ -5,48 +5,27 @@ import java.util.Stack;
 /**
  * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
  * The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
+ *  
+ * SOLUTION APPROACH: Maintain a hashmap for all tokens(bracket pairs), whenever open bracket is encountered, push the corr
+ * closed bracket and whenever close comes pop and check if they are same...
  */
 
 class BracketEval {
-
-    private static Character getOpenBracket(Character ch) {
-        if (ch == ')') return '(';
-        else if (ch == '}') return '{';
-        else if (ch == ']') return '[';
-        return ' ';
-    }
-
-    public static boolean isStringValid(String input) {
-        if (input == null) {
-            return false;
-        }
-        Stack<Character> tokenStack = new Stack<Character>();
-        for (int i = 0; i < input.length(); i++) {
-            if (input.charAt(i) == '(' || input.charAt(i) == '['
-                    || input.charAt(i) == '{') {
-                tokenStack.push(input.charAt(i));
-            } else {
-                if (!tokenStack.isEmpty()) {
-                    if (tokenStack.pop() != getOpenBracket(input.charAt(i))) {
-                        return false;
-                    }
-                } else
+    static boolean hasMatchingParantheses(String strExpression) {
+        Stack<Character> stack = new Stack<Character>();
+        Map<Character,Character> bracketMap = new HashMap<Character, Character>();
+        bracketMap.put('(',')');bracketMap.put('{','}');bracketMap.put('[',']');
+        for(int i = 0; i < strExpression.length(); i++){
+            char ch = strExpression.charAt(i);
+            if(bracketMap.containsKey(ch)){
+                stack.push(bracketMap.get(ch));
+            }
+            if(ch == '}' || ch == ']' || ch == ')') {
+                if(stack.isEmpty() || ch != stack.pop()){
                     return false;
+                }
             }
         }
-        return tokenStack.isEmpty();
-    }
-
-    private static void testBench() {
-        System.out.println(isStringValid("(]"));
-        System.out.println(isStringValid("()"));
-        System.out.println(isStringValid("()[]"));
-        System.out.println(isStringValid("(([]))"));
-        System.out.println(isStringValid("()["));
-        System.out.println(isStringValid("()]"));
-    }
-
-    public static void main(String args[]) {
-        testBench();
+        return stack.isEmpty();
     }
 }
