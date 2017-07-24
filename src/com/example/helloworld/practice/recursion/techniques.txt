@@ -7,3 +7,20 @@
     
 4. recursion should be very intuitive and very simple, if we are getting stuck which means the logic was complicated. Stop coding and go
    back to define the logic, recursive function paramters, identify the base case and return types.
+
+
+Problems:
+
+1. Permutation - String or Array
+
+2. PowerSet 
+
+3. Phone keypad - perm
+
+4. n-Queens problem
+
+5. Maze problem
+
+6. Count the binary trees, possible brackets combinations, 1 or 2 steps - Catalan Number variants 
+
+7. Fib, factorial, gcd, math.pow, sqrt 
