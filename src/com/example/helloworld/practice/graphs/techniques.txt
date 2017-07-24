@@ -1,0 +1,9 @@
+1. Adjacency List / adjacency matrix / HashMap<Vertex v, List<Vertext neighbors>
+2. DFS - Depth first search
+3. BFS - Breadth first search
+4. Topological sort - DFS approach, use stack after DFS recursive call
+5. Shortest path in an undirected graph (covers 60% of the graph problems) - basically count the min hops 
+6. Cycle detection in a graph
+7. Djikstra's algo - weighted directed graph (non-neg weights) - choose the least weighted neighbor 
+    & populate the weights until all nodes are exhausted
+8. Explicit graph problems and non-explicit graph problems like count # of islands, maze problems, file dependency, scheduling,etc.
