@@ -1,0 +1,6 @@
+1. Quickselect algorithm
+    a. to find Top K or kth smallest/largest
+
+2. Merge routine in merge sort, lot of applications
+
+3. Pivot index (same as quickselect)
