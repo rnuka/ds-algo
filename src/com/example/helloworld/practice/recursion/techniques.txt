@@ -1,0 +1,9 @@
+1. Solve smaller problem, its all about being lazy. You just do something and give the remaining sub-problems to your children
+
+2. Top-down or bottom-up approach
+
+3. Solve for no input, 1 input, 2 & 3. Then it will take care itself in solving the remaining n-3 problems.
+    a. Powerset problem. solve [ {} ] , [ {}, {a} ], [ {}, {a}, {b}, {a,b} ] once you solve this, apply the same logic recursively
+    
+4. recursion should be very intuitive and very simple, if we are getting stuck which means the logic was complicated. Stop coding and go
+   back to define the logic, recursive function paramters, identify the base case and return types.
