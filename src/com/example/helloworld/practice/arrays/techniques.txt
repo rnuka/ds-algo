@@ -1,0 +1,4 @@
+Array Techniques:
+
+1. Two pointer approach, one from the start and one from the end.
+2. Try to apply Binary search wherever possible if its sorted array or rotated-sorted array
