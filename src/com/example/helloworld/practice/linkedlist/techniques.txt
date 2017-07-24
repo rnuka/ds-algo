@@ -1,0 +1,11 @@
+1. Slow runner / fast runner approach
+   a. Kth node from last
+   b. to find middle element in the linked list
+   c. to detect the loop in the list
+
+2. Merge two linked lists- find interesection point. Find len1, len2 of two lists and advance one to ~(len1-len2) and find intersection
+
+3. Reversing a linked list
+    a. reverse every k nodes in a list (use recursion and come from the last)
+
+4. 
