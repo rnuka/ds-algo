@@ -1,0 +1,37 @@
+Template for any System Design problem (lets take url shortner for illustration):
+
+1. Get the functional requirements. Outline use cases, constraints, and assumptions.(system use - who/how/how many/what/io/how much)
+    a. Shorten the url, b.redirect to original url for given short url,etc.
+
+2. Data format / data model (in this eg, short url size(uniq id), long url size, TTL, expiration etc)
+      - in memory data-format(like hashmaps)
+      - Row major formats ( mongoDB)
+      - Column major formats (like cassandra, Hbase, Bigtable). recently rocksdb from fb- LSM trees based(col-major)
+
+3. Why distributed? (try to analyze the data and figure out why we need to go for distributed system for this problem, 
+                      benchmarking or estimating the storage/compute will help to take this decision)
+
+4. Distributed systems
+        a. Identify the core components or services.
+        b. Load balancer, horizontal scaling, caching, db sharding
+5. Distribution mechanisms - CAP theorem
+        a. Consistency - Availability - Partition(network partition tolerance) - a system can either be CP or AP, 
+            its difficult to avoid P in any problem.
+        b. Data partitioning(Sharding) - split data between multiple nodes evenly (eg: hashCode(key) % n)
+        c. Consistent Hashing - simple modulo based hashing breaks when node failures happen, so consistent hashing is imp.
+              https://blog.imaginea.com/consistent-hashing-in-cassandra/
+        
+
+Some key terms/concepts:
+
+1. Low latency operations
+2. Scale out read/write OPS (operations per sec)  -Throughput
+3. Availability (uptime, like 99.99999%)
+4. Consisitency - Immediate(like RDBMS applications, banking systems) & Eventual consistency(Cassandra like systems)
+5. Tradeoff btw NoSQL and Relational to achieve Scalability/replication vs ACID 
+6. Routers/load-balancers (cluster manager[have app server details] + 
+                          config manager[have details abt shard_ids & key mapping] for faster routing)
+7. ZooKeeper - https://zookeeper.apache.org/doc/trunk/zookeeperOver.html
+8. Replication - master-master  and master-slave
+9. DNS, CDN
+10. All concepts overview with examples - https://github.com/donnemartin/system-design-primer

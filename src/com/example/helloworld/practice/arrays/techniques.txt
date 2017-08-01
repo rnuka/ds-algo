@@ -1,0 +1,58 @@
+General Array Techniques:
+
+1. Two pointer approach, one from the start and one from the end.
+2. Try to apply Binary search wherever possible if its sorted array or rotated-sorted array
+3. Examplify : Create the example of the algorithm 
+   Before thinking about the logic of algorithm,We should understand the question clearly. Write atleast two examples , 
+   indicating input    and output. This two minute initial work will remove the uncertainity of misunderstanding the question 
+   and thinking in wrong direction.
+4. Pattern Matching 
+   We have to consider what problems the algorithm is similar to , we need to figure out if we can modify the solution 
+   to develop an algorithm for the given problem .
+5. Base case and Build 
+   This approach is most widely used in the recursive algorithm .
+   Solve the algorithm first for a base case (e.g., just one element). Then, try to solve it for elements one and two, 
+   assuming that we   have the answer for element one. Then, try to solve it for elements one, two and three, 
+   assuming that we have the answer to elements one and two.
+6. Data Structure Brainstorm 
+   This is tiresome method and based on hit and trial method . Simply , run through a list of data structures and try to apply each one.
+   For eg: see if array fits, queue, stack, linkedlist, binary tree or BST or trie, heap, priorityqueues, graph, etc.,
+
+
+Specific Array Problem Techniques:
+
+1. Median of an unsorted array (input stream): maintain two heaps, min heap & max heap. if(n%2==0) return max_heap.poll() or average of min_heap.poll() + max_heap.poll() / 2.  Extn: How to achieve median of two sorted arrays?
+
+2. Find the element in an array which is occurs only once while all the other elements occur twice.
+    This can be solved in O(N) by simply XOR-ing all the numbers in the array. 
+    for (i = 0; i < n; ++i) {xorVal ^= arr[i];} return xorVal;
+
+3. Find the top K numbers in an integer array of size N
+   This is a pretty famous question. Here, “top” just means the largest elements. So, in a way, 
+   we must get the first K elements if our   array was sorted in a decreasing fashion.
+   We can do this in O(N + K log K) time by using Quickselect Algorithm to find the kth largest element. 
+   Then we can partition the array in the Quicksort manner, where all elements greater than the kth greatest element 
+   are placed to one side, and apply an O(N log N) sorting algorithm on those K elements.
+
+4. 2D Array Spiral Print
+   - Maintain 4 indices left_to_right, top_to_btm, right_to_left, btm_to_top
+
+5. Find the first occurrence or last occurrence of an element in a sorted array which contains duplicates
+    #todo
+
+6. Search for an element in a sorted and rotated array.
+   
+7. Find the kth smallest/largest element in an array
+   This can be done in O(N) time by the Quickselect Algorithm. The Quickselect Algorithm is a very useful divide-and-conquer 
+   based algorithm which rearranges the array such that the kth element is the kth smallest element in the array.
+
+8. Find the majority element in the array
+   Majority Element – If an element in an array occurs for more than N/2 times. So, if such an element exists, 
+   there will be only one   such element.
+   We can do this in O(N) time by the Boyer–Moore majority voting algorithm.(candidate, votes)
+   for (i = 0; i < length; ++i) {if (votes == 0) { candidate = arr[i];}
+   if (candidate == arr[i]) {++votes;} else {--votes;}}
+   for (i = 0; i < length; ++i) {if (arr[i] == candidate) {++votes;}}
+   if (votes > length / 2) return candidate;
+
+9. 

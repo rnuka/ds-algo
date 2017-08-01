@@ -1,0 +1,11 @@
+1. Quickselect algorithm
+    a. to find Top K or kth smallest/largest
+
+2. Merge routine in merge sort, lot of applications. (Stability is maintained bcoz of left subtree is merged first then right)
+
+3. Pivot index (same as quickselect)
+
+4. Stable sort (preserving input order for similar element values)
+   a. sql order by clause multiple columns
+   b. log messages (esp sort by timestamp & priority)
+   

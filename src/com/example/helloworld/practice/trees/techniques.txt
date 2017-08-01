@@ -1,0 +1,26 @@
+1. Tree traversals ( in, pre post)
+2. Finding min, max in a binary tree
+3. BST - insert, delete, find
+4. LCA with parent access
+5. Predecessor and successor of a node in BST
+6. Serialize & Deserialize in a BST
+7. Level order traversal and vertical traversal
+8. Height, depth and diameter of the tree
+
+
+Generic approach for any tree problem:
+
+int function(Node root)
+// base case or exit condition
+    if(root == null){
+      //do something or store results 
+      return 0;
+    }
+// traverse the tree 
+    leftSubtree += function(root.left);
+    rightSubtree += function(root.right);
+// do the biz logic
+    //eg: return sum
+    sum = leftSum + rightSum;
+    return sum;
+ 
